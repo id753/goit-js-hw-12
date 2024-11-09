@@ -16,3 +16,339 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* --------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+}
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background: #cfcfcf;
+  border: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: #4e75ff;
+}
+button:hover {
+  background: #6c8cff;
+}
+button:disabled {
+  background: #cfcfcf;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #989898;
+}
+
+/* .container-timer {
+  margin: 0 auto;
+} */
+/* .timer {
+  width: 346px;
+  height: 72px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 20px;
+
+} */
+.label,
+.value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+.loadMoreBtn {
+  display: none; /* Скрываем кнопку по умолчанию */
+  margin-top: 20px; /* Отступ сверху, чтобы кнопка не прилипала к галерее */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loadMoreBtn.visible {
+  display: block; /* Показываем кнопку при необходимости */
+}
+
+/* .iziToast-wrapper {
+  width: 302px;
+  height: 64px;
+  border-bottom: 2px solid #ffbebe;
+  border-radius: 4px;
+  padding: 20px;
+  width: 302px;
+  height: 64px;
+  background: #ef4040;
+} */
+/* .flatpickr-input {
+  border: 1px solid #808080;
+border-radius: 4px;
+width: 272px;
+height: 40px;
+
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #2e2f42;
+
+padding-left: 16px;
+
+}
+.flatpickr-input:hover {
+  border: 1px solid #000;
+border-radius: 4px;
+width: 272px;
+height: 40px;
+
+}
+.flatpickr-input:active {
+  border: 1px solid #4e75ff;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  
+
+}
+.flatpickr-input:disabled {
+  border: 1px solid #808080;
+border-radius: 4px;
+width: 272px;
+height: 40px;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #808080;
+
+} */
+
+/*  2 form */
+/* .form {
+  width: 360px;
+margin: 0 auto;
+margin-left: 0;
+} */
+/* .form input[type="number"] {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #2e2f42;
+padding-left: 16px;
+} */
+/* .form input[type="number"]:hover {
+  border: 1px solid #000;
+border-radius: 4px;
+}
+
+.form input[type="number"]:active {
+  border: 1px solid #4e75ff;
+} */
+
+/* .form input[type="radio"] {
+  border: 1px solid #757575;
+  border-radius: 14px;
+  width: 20px;
+  height: 20px;  
+} */
+label {
+  /* margin: 0 auto; */
+  /* margin-right: 45px; */
+  border-top: 20px;
+}
+fieldset {
+  width: 100%;
+  height: 78px;
+  margin-top: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+form {
+  margin: 0 auto;
+  width: 371px;
+}
+input {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  border: 1px solid #808080;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+input:active,
+:focus {
+  color: #2e2f42;
+}
+form button {
+  border-radius: 8px;
+  height: 40px;
+  width: 91px;
+  margin-top: 24px;
+}
+ul.list {
+  /* width: 1128px; */
+  /* height: 200px; */
+  margin: 20px auto;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.list__item {
+  border: 1px solid #808080;
+  width: 360px;
+  height: 200px;
+  position: relative;
+}
+.info {
+  width: 360px;
+  height: 48px;
+  background: #fff;
+  text-align: center;
+  display: flex; /* Используем flexbox для расположения элементов в ряд */
+  justify-content: space-between; /* Равномерно распределяем элементы по горизонтали */
+  align-items: center;
+  padding: 4px 50px; /* Отступы вокруг блока информации */
+
+  background-color: #f8f9fa; /* Цвет фона для блока информации */
+  border-top: 1px solid #dee2e6; /* Верхняя граница для разделения от изображения */
+  border-bottom: 1px solid #dee2e6; /* Нижняя граница для завершения блока */
+  position: absolute;
+  bottom: 0; /* Прикрепляем блок к нижней части изображения */
+  left: 0; /* Выравниваем блок по левому краю */
+  right: 0; /* Растягиваем блок на всю ширину */
+}
+
+.info-item {
+  /* font-size: 1em; Размер шрифта для текста */
+  color: #343a40; /* Цвет текста */
+  margin: 0; /* Убираем отступы по умолчанию у параграфов */
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* Дополнительные стили для заголовков, если вы хотите выделить их */
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.title,
+.title_second {
+  text-align: center;
+  color: blue;
+  animation: textAnimation 500ms infinite;
+}
+@keyframes textAnimation {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.loadMoreBtn {
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 40px;
+  width: 125px;
+  background-color: #4e75ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}

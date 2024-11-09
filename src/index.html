@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <form class="form" autocomplete="off">
+        <label>
+          <input type="text" name="search" placeholder="Search images..." />
+        </label>
+        <button class="SearchBtn" type="submit">Search</button>
+      </form>
+      <h1 class="title"></h1>
+      <ul class="list"></ul>
+      <h2 class="title_second"></h2>
+      <button class="loadMoreBtn">Load more</button>
+      <!-- Кнопка теперь после списка -->
     </main>
 
-    <load src="./partials/footer.html" />
-
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
     <script type="module" src="./main.js"></script>
+
+    <!-- У файлі pixabay-api.js зберігай функції для HTTP-запитів.
+    У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
+    У файлі main.js напиши всю логіку роботи додатка. -->
   </body>
 </html>
