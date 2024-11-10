@@ -1,11 +1,19 @@
-
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
 
-// Функция для создания HTML-разметки для массива изображений
+let lightbox;
+
+export function initializeLightbox() {
+    if (!lightbox) {
+        lightbox = new SimpleLightbox('.list a', {
+            captionDelay: 250,
+            captionsData: 'alt',
+        });
+    } else {
+        lightbox.refresh();
+    }
+}
+
 export function createMarkup(arr) {
     return arr.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
         `<li class="list__item">
@@ -20,31 +28,4 @@ export function createMarkup(arr) {
             </div>
         </li>`
     ).join("");
-}
-
-// Функция для инициализации SimpleLightbox
-export function initializeLightbox() {
-    const lightbox = new SimpleLightbox('.list a', {
-        captionDelay: 250,
-        captionsData: 'alt',
-    });
-    lightbox.refresh();
-}
-
-// Функция для отображения ошибок с использованием iziToast
-export function showError(message) {
-    iziToast.error({
-        title: "Error",
-        message: message,
-        position: 'topRight'
-    });
-}
-
-// Функция для отображения информации с использованием iziToast
-export function showInfo(message) {
-    iziToast.info({
-        title: "Info",
-        message: message,
-        position: 'topRight'
-    });
 }

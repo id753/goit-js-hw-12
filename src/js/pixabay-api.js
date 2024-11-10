@@ -1,5 +1,3 @@
-// pixabay-api.js
-
 import axios from 'axios';
 
 const BASE_URL = "https://pixabay.com/api/";
@@ -21,6 +19,6 @@ export async function fetchData(query, page) {
         const response = await axios.get(BASE_URL, { params });
         return response.data;
     } catch (error) {
-        throw new Error("Failed to fetch images");
+        throw new Error("Failed to fetch images.");
     }
 }
