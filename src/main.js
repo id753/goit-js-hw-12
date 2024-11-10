@@ -56,33 +56,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    async function handleLoadMore() {
-        currentPage += 1;
-        title.textContent = "Loading images, please wait...";
+   async function handleLoadMore() {
+    currentPage += 1;
+    title.textContent = "Loading images, please wait...";
 
-        try {
-            const data = await fetchData(currentQuery, currentPage);
-            loadedHits += data.hits.length;
+    try {
+        const data = await fetchData(currentQuery, currentPage);
 
-            if (loadedHits >= totalHits) {
-                iziToast.info({ title: "Info", message: "We're sorry, but you've reached the end of search results.", position: 'topRight' });
-                loadMoreBtn.classList.remove("visible");
-            } else {
-                container.insertAdjacentHTML('beforeend', createMarkup(data.hits));
-                initializeLightbox();
+        loadedHits += data.hits.length;
 
-                const firstCard = document.querySelector(".list__item");
-                const cardHeight = firstCard.getBoundingClientRect().height;
+        if (data.hits.length > 0) {
+            container.insertAdjacentHTML('beforeend', createMarkup(data.hits));
+            initializeLightbox();
 
-                window.scrollBy({
-                    top: cardHeight * 2,
-                    behavior: "smooth"
-                });
-            }
-        } catch (error) {
-            iziToast.error({ title: "Error", message: "Failed to fetch images. Please try again later!", position: 'topRight' });
-        } finally {
-            title.textContent = "";
+            // Прокрутка
+            const firstCard = document.querySelector(".list__item");
+            const cardHeight = firstCard.getBoundingClientRect().height;
+            window.scrollBy({
+                top: cardHeight * 2,
+                behavior: "smooth"
+            });
         }
+
+        // Если все изображения загружены, скрываем кнопку
+        if (loadedHits >= totalHits) {
+            loadMoreBtn.classList.remove("visible");
+            loadMoreBtn.classList.add("hidden"); // Добавляем только "hidden"
+            iziToast.info({
+                title: "Info",
+                message: "We're sorry, but you've reached the end of search results.",
+                position: 'topRight'
+            });
+        } else {
+            loadMoreBtn.classList.add("visible");
+            loadMoreBtn.classList.remove("hidden"); // Убираем "hidden"
+        }
+
+    } catch (error) {
+        iziToast.error({
+            title: "Error",
+            message: "Failed to fetch images. Please try again later!",
+            position: 'topRight'
+        });
+    } finally {
+        title.textContent = ""; 
+        console.log(loadMoreBtn.classList);
     }
+}
+
 });
