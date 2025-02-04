@@ -102,20 +102,6 @@ button:disabled {
   color: #989898;
 }
 
-/* .container-timer {
-  margin: 0 auto;
-} */
-/* .timer {
-  width: 346px;
-  height: 72px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: 24px;
-  margin-top: 20px;
-
-} */
 .label,
 .value {
   font-family: 'Montserrat', sans-serif;
@@ -126,8 +112,8 @@ button:disabled {
   color: #2e2f42;
 }
 .loadMoreBtn {
-  display: none; /* Скрываем кнопку по умолчанию */
-  margin-top: 20px; /* Отступ сверху, чтобы кнопка не прилипала к галерее */
+  display: none;
+  margin-top: 20px;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -137,99 +123,10 @@ button:disabled {
 }
 
 .loadMoreBtn.visible {
-  display: block; /* Показываем кнопку при необходимости */
+  display: block;
 }
 
-/* .iziToast-wrapper {
-  width: 302px;
-  height: 64px;
-  border-bottom: 2px solid #ffbebe;
-  border-radius: 4px;
-  padding: 20px;
-  width: 302px;
-  height: 64px;
-  background: #ef4040;
-} */
-/* .flatpickr-input {
-  border: 1px solid #808080;
-border-radius: 4px;
-width: 272px;
-height: 40px;
-
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #2e2f42;
-
-padding-left: 16px;
-
-}
-.flatpickr-input:hover {
-  border: 1px solid #000;
-border-radius: 4px;
-width: 272px;
-height: 40px;
-
-}
-.flatpickr-input:active {
-  border: 1px solid #4e75ff;
-  border-radius: 4px;
-  width: 272px;
-  height: 40px;
-  
-
-}
-.flatpickr-input:disabled {
-  border: 1px solid #808080;
-border-radius: 4px;
-width: 272px;
-height: 40px;
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #808080;
-
-} */
-
-/*  2 form */
-/* .form {
-  width: 360px;
-margin: 0 auto;
-margin-left: 0;
-} */
-/* .form input[type="number"] {
-  border: 1px solid #808080;
-  border-radius: 4px;
-  width: 100%;
-  height: 40px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #2e2f42;
-padding-left: 16px;
-} */
-/* .form input[type="number"]:hover {
-  border: 1px solid #000;
-border-radius: 4px;
-}
-
-.form input[type="number"]:active {
-  border: 1px solid #4e75ff;
-} */
-
-/* .form input[type="radio"] {
-  border: 1px solid #757575;
-  border-radius: 14px;
-  width: 20px;
-  height: 20px;  
-} */
 label {
-  /* margin: 0 auto; */
-  /* margin-right: 45px; */
   border-top: 20px;
 }
 fieldset {
@@ -248,7 +145,7 @@ form {
   width: 371px;
 }
 input {
-  border-radius: 4px;
+  border-radius: 8px;
   width: 272px;
   height: 40px;
   border: 1px solid #808080;
@@ -274,10 +171,8 @@ form button {
   margin-top: 24px;
 }
 ul.list {
-  /* width: 1128px; */
-  /* height: 200px; */
   margin: 20px auto;
-  margin-top: 5px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -285,33 +180,42 @@ ul.list {
 }
 .list__item {
   border: 1px solid #808080;
+  border-radius: 5px;
   width: 360px;
   height: 200px;
   position: relative;
+  overflow: hidden; /* Обрезает содержимое, выходящее за границы */
+}
+
+.list__item img:hover {
+  transform: scale(1.2);
 }
 .info {
   width: 360px;
   height: 48px;
   background: #fff;
   text-align: center;
-  display: flex; /* Используем flexbox для расположения элементов в ряд */
-  justify-content: space-between; /* Равномерно распределяем элементы по горизонтали */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 4px 50px; /* Отступы вокруг блока информации */
+  padding: 4px 50px;
+  transition: transform 0.9s ease;
 
-  background-color: #f8f9fa; /* Цвет фона для блока информации */
-  border-top: 1px solid #dee2e6; /* Верхняя граница для разделения от изображения */
-  border-bottom: 1px solid #dee2e6; /* Нижняя граница для завершения блока */
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
   position: absolute;
-  bottom: 0; /* Прикрепляем блок к нижней части изображения */
-  left: 0; /* Выравниваем блок по левому краю */
-  right: 0; /* Растягиваем блок на всю ширину */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.info:hover {
+  transform: scale(1.05);
 }
 
 .info-item {
-  /* font-size: 1em; Размер шрифта для текста */
-  color: #343a40; /* Цвет текста */
-  margin: 0; /* Убираем отступы по умолчанию у параграфов */
+  color: #343a40;
+  margin: 0;
   font-weight: 400;
   font-size: 12px;
   line-height: 2;
@@ -319,11 +223,10 @@ ul.list {
   color: #2e2f42;
 }
 
-/* Дополнительные стили для заголовков, если вы хотите выделить их */
-
 img {
   width: 100%;
   height: 100%;
+  transition: transform 0.9s ease;
 }
 .title,
 .title_second {
@@ -357,5 +260,5 @@ img {
 }
 
 .visible {
-  display: block; /* или другой стиль, который делает кнопку видимой */
+  display: block;
 }
